@@ -12,6 +12,25 @@ https://docs.appbase.io/docs/reactivesearch/v3/overview/quickstart/
 6. commit the changes (`git commit -m "Change titles and styling on homepage"`)
 6. Push it: `git push heroku master` (deploy)
 7. Open it in the web: `heroku open`
+8. Env vars are missing, set the following via dashbord or cli
+
+Easiest way:
+
+1. create `.env` locally
+2. Set heroku config to these values via
+```sed 's/#[^("|'')]*$//;s/^#.*$//' .env | \
+  xargs heroku config:set
+``` 
+
+(make sure you're in the correct folder)
+Source: 
+https://www.fomfus.com/articles/how-to-set-heroku-environmental-variables-from-dotenv-env-files
+
+```
+heroku config:set REACT_APP_ELASTICSEARCH_INDEXNAME=index1
+heroku config:set REACT_APP_ ELASTISEARCH_URL=https://coronacampus-XXXXXX.eu-central-1.bonsaisearch.net:443
+heroku config:set REACT_APP_ELASTICSEARCH_AUTH_STRING_READ=XXXX:XXXX
+```
 
 ## Test it locally:
 
