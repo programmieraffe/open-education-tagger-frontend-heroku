@@ -1,3 +1,14 @@
+
+
+# OpenEducationTagger
+
+See full docs at:
+https://github.com/programmieraffe/open-education-tagger
+
+---
+
+Frontend information
+
 [https://github.com/mars/create-react-app-buildpack](https://github.com/mars/create-react-app-buildpack)
 
 https://docs.appbase.io/docs/reactivesearch/v3/overview/quickstart/
@@ -21,10 +32,10 @@ Easiest way:
 ```
 sed 's/#[^("|'')]*$//;s/^#.*$//' .env | \
   xargs heroku config:set
-``` 
+```
 
 (make sure you're in the correct folder)
-Source: 
+Source:
 https://www.fomfus.com/articles/how-to-set-heroku-environmental-variables-from-dotenv-env-files
 
 ```
@@ -38,7 +49,7 @@ heroku config:set REACT_APP_ELASTICSEARCH_AUTH_STRING_READ=XXXX:XXXX
 
 [https://github.com/mars/create-react-app-buildpack#set-vars-on-heroku](
 https://github.com/mars/create-react-app-buildpack#set-
-vars-on-heroku) 
+vars-on-heroku)
 
 
 Use runtime values (Only supports REACT_APP_*)
@@ -49,7 +60,7 @@ in App.js:
 `import runtimeEnv from '@mars/heroku-js-runtime-env';`
 
 
-run 
+run
 
 `yarn start` (or npm start, if you don't have yarn)
 
