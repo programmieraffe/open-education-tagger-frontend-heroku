@@ -18,7 +18,8 @@ Easiest way:
 
 1. create `.env` locally
 2. Set heroku config to these values via
-```sed 's/#[^("|'')]*$//;s/^#.*$//' .env | \
+```
+sed 's/#[^("|'')]*$//;s/^#.*$//' .env | \
   xargs heroku config:set
 ``` 
 
