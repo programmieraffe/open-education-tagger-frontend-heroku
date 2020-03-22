@@ -9,6 +9,8 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
+
+          <code>Runtime env var example: { process.env.REACT_APP_HELLO }</code>
         </p>
         <a
           className="App-link"
