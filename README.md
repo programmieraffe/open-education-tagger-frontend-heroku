@@ -17,7 +17,17 @@ https://docs.appbase.io/docs/reactivesearch/v3/overview/quickstart/
 
 
 [https://github.com/mars/create-react-app-buildpack#set-vars-on-heroku](
-https://github.com/mars/create-react-app-buildpack#set-vars-on-heroku) 
+https://github.com/mars/create-react-app-buildpack#set-
+vars-on-heroku) 
+
+
+Use runtime values (Only supports REACT_APP_*)
+
+yarn add @mars/heroku-js-runtime-env --save
+
+in App.js:
+`import runtimeEnv from '@mars/heroku-js-runtime-env';`
+
 
 run 
 
