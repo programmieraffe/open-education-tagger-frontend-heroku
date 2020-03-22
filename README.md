@@ -1,5 +1,7 @@
 [https://github.com/mars/create-react-app-buildpack](https://github.com/mars/create-react-app-buildpack)
 
+https://docs.appbase.io/docs/reactivesearch/v3/overview/quickstart/
+
 
 1. create repo on github, clone, change directory to upper directory
 2. `npx create-react-app coronacampus-reactivesearch-heroku-frontend`
@@ -19,7 +21,7 @@ https://github.com/mars/create-react-app-buildpack#set-vars-on-heroku)
 
 run 
 
-`npm start` 
+`yarn start` (or npm start, if you don't have yarn)
 
 (this will include .env file vars), just use VAR_XYZ to use it (see `.env.example`)
 
