@@ -1,28 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { ReactiveBase } from '@appbaseio/reactivesearch';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-
-          <code>Runtime env var example: { process.env.REACT_APP_HELLO }</code>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+	render() {
+		return (
+			<ReactiveBase
+				app="carstore-dataset"
+				credentials="process.env.ELASTICSEARCH_AUTH_STRING_READ"
+			>
+				// other components will go here.
+				<div>Hello ReactiveSearch!</div>
+			</ReactiveBase>
+		);
+	}
 }
-
-export default App;
