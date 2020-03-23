@@ -1,18 +1,34 @@
 # OpenEducationTagger (frontend)
 
 See full docs at:
-https://github.com/programmieraffe/open-education-tagger
+[https://github.com/programmieraffe/open-education-tagger](https://github.com/mars/create-react-app-buildpack#user-content-purpose) (This is only the README for the reactive-search frontend)
 
-This is only the README for the reactive-search frontend built with reactjs and heroku buildpack [https://github.com/mars/create-react-app-buildpack](https://github.com/mars/create-react-app-buildpack).
+Usage:
+
+- [https://github.com/mars/create-react-app-buildpack](https://github.com/mars/create-react-app-buildpack#user-content-purpose)
 
 ## Setup frontend
 
-OSX/Linux:
 
 1. `git clone https://github.com/programmieraffe/open-education-tagger-frontend.git` (clone the repo to local hard drive)
 2. `cd open-education-tagger` (go to directory)
 
-### 1. Local setup
+### Heroku quickstart (out of the box usage)
+
+1. `heroku apps:create YOURAPPNAME --region eu` or `heroku apps:create --region eu`
+2. `cp .env.example .env`
+3. Edit config vars for elasticsearch API
+4. set config values on heroku.com:
+`sed 's/#[^("|'')]*$//;s/^#.*$//' .env | \
+  xargs heroku config:set`
+5. `heroku buildpacks:set mars/create-react-app`
+6. `git commit --allow-empty -m 'Switch to create-react-app-buildpack'`
+5. Start build & deploy: `git push heroku master`
+
+Important: Use react-buidpack otherwise heroku will assume nodejs and app will crash with H10.
+
+
+### 1. Local setup/testing
 
 1. use `yarn install` (or `npm install`) to load dependencies
 2. create `.env` locally (see .env.example, `cp .env.example .env`)
