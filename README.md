@@ -1,15 +1,49 @@
-
-
-# OpenEducationTagger
+# OpenEducationTagger (frontend)
 
 See full docs at:
 https://github.com/programmieraffe/open-education-tagger
 
+This is only the README for the reactive-search frontend built with reactjs and heroku buildpack [https://github.com/mars/create-react-app-buildpack](https://github.com/mars/create-react-app-buildpack).
+
+## Setup frontend
+
+1. clone this repo
+2. `cd` into it on terminal / commandline
+3. use `yarn install` (or `npm install`) to load dependencies
+4. create heroku app: `heroku apps:create YOURAPPNAME --region eu`
+
+### Local testing
+
+1. create `.env` locally (see .env.example)
+2. `yarn start`(or `npm start`)
+
+This should open the interface in your browser and connect to the elasticsearch instance. Check out Chrome/Firefox developer tools console for errors.
+
+### Setup production environment
+
+Easiest way if you have created .env file:
+
+1. Copy environment config vars from .env file to production app:
+```
+sed 's/#[^("|'')]*$//;s/^#.*$//' .env | \
+  xargs heroku config:set
+```
+
+Other methods: Add config vars on heroku.com dashboard or use config:set on command line.
+
+2. git commit all your changes (if you changed something)
+3. deploy via `git push heroku master` (this will start the build process)
+4. open website with `heroku open`
+
+
 ---
+OLD README:
+
 
 Frontend information
 
-[https://github.com/mars/create-react-app-buildpack](https://github.com/mars/create-react-app-buildpack)
+
+
 
 https://docs.appbase.io/docs/reactivesearch/v3/overview/quickstart/
 
