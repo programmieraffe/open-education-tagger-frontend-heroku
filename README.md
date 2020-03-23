@@ -7,35 +7,72 @@ This is only the README for the reactive-search frontend built with reactjs and 
 
 ## Setup frontend
 
-1. clone this repo
-2. `cd` into it on terminal / commandline
-3. use `yarn install` (or `npm install`) to load dependencies
-4. create heroku app: `heroku apps:create YOURAPPNAME --region eu`
+OSX/Linux:
 
-### Local testing
+1. `git clone https://github.com/programmieraffe/open-education-tagger-frontend.git` (clone the repo to local hard drive)
+2. `cd open-education-tagger` (go to directory)
 
-1. create `.env` locally (see .env.example)
-2. `yarn start`(or `npm start`)
+### 1. Local setup
 
-This should open the interface in your browser and connect to the elasticsearch instance. Check out Chrome/Firefox developer tools console for errors.
+1. use `yarn install` (or `npm install`) to load dependencies
+2. create `.env` locally (see .env.example, `cp .env.example .env`)
+2. Generate the interface and run it via `yarn start`(or `npm start`), this will include the .env config vars to the interface
 
-### Setup production environment
+`yarn start` should open the interface in your browser and connect to the elasticsearch instance (localhost:3000). Check out Chrome/Firefox developer tools console for errors.
 
-Easiest way if you have created .env file:
+### 2. Deploy to web (heroku)
 
-1. Copy environment config vars from .env file to production app:
+1. `heroku apps:create YOURAPPNAME --region eu` - create heroku app, this will also add git remote for heroku
+
+2. Configure environment vars: The `.env`is only used for local testing. For hosting on heroku.com the vars need to be configured via `heroku config:set` or via web dashboard (see: [config vars](https://devcenter.heroku.com/articles/config-vars)). Easiest way if you have created .env file - see below.
+3. Important: commit all your changes via git (if you changed something)
+4. Important: Add buildpack `heroku buildpacks:set mars/create-react-app`
+
+(commit this via
+
 ```
-sed 's/#[^("|'')]*$//;s/^#.*$//' .env | \
-  xargs heroku config:set
+git commit --allow-empty -m 'Switch to create-react-app-buildpack'
+git push heroku master
 ```
 
-Other methods: Add config vars on heroku.com dashboard or use config:set on command line.
 
-2. git commit all your changes (if you changed something)
-3. deploy via `git push heroku master` (this will start the build process)
-4. open website with `heroku open`
+3. Deploy everything via `git push heroku master` (this will start the build process and deploy the build-folder)
+4. open website with `heroku open` 
 
 
+
+#### Hint: Set heroku.com config vars from local .env-file
+
+```
+sed 's/#[^("|'')]*$//;s/^#.*$//' .env | \ xargs heroku config:set
+```
+
+#### Hint: Debug H10 app crashed error
+
+Common error would be that the config is not set correctly (config vars missing)
+
+https://devcenter.heroku.com/articles/troubleshooting-node-deploys
+
+NPM_CONFIG_LOGLEVEL=error
+remote:        NODE_ENV=production
+remote:        NODE_MODULES_CACHE=true
+remote:        NODE_VERBOSE=false
+remote:        
+
+
+
+
+
+
+
+#### 4.1 Hosting on heroku
+
+
+#### 4.2 Hosting on github pages
+
+#### 4.3 Hosting on gitlab pages
+
+#### 4.4 Hosting on own webspace
 ---
 OLD README:
 

@@ -1,7 +1,6 @@
 {
   "name": "coronacampus-reactivesearch-heroku-frontend",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "@appbaseio/reactivesearch": "^3.6.1",
     "@mars/heroku-js-runtime-env": "^3.0.2",
